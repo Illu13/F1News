@@ -1,0 +1,15 @@
+.toolbar {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px; /* Ajusta el relleno según tus preferencias */
+    justify-content: center;
+    align-self: cen;
+ 
+}
+.spacer {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+}

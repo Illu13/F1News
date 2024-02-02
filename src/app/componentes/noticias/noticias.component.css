@@ -1,0 +1,19 @@
+/* En tu archivo de estilos CSS o en el componente CSS */
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; /* O ajusta la altura según tus necesidades */
+    margin-bottom: 50px;
+  }
+
+  .image-container {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .example-card {
+    max-width: 600px;
+  }
+  
+  

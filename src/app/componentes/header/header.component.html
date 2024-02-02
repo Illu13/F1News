@@ -1,0 +1,29 @@
+<mat-toolbar color="primary" class="toolbar">
+    <button
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with menu icon"
+    >
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span>F1 News</span>
+    <span class="example-spacer"></span>
+
+    <a mat-button [routerLink]="['/home']">Inicio</a>
+    <a mat-button routerLink="/productos">Crear noticia</a>
+    <a mat-button routerLink="/contacto">Editar noticia</a>
+    <div *ngIf="token == ''; else logged" class="final">
+        <a mat-button (click)="abrirModalRegister()" 
+            >Registrarse</a
+        >
+        <a mat-button (click)="abrirModalLogin()">Identificarse</a>
+    </div>
+
+    <ng-template #logged>
+        <div class="final">
+            <a mat-button (click)="cerrarSesion()" 
+            >Cerrar sesión</a
+        >
+        </div>
+    </ng-template>
+</mat-toolbar>
