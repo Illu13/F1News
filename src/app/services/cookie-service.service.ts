@@ -23,3 +23,5 @@ export class CookieServiceService {
         this.cookieService.deleteAll();
     }
 }
+
+export { CookieService };

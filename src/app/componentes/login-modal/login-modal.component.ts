@@ -46,16 +46,19 @@ export class LoginModalComponent {
             usuarioLogueado.subscribe((user: loggedUser | null) => {
                 console.log(user);
                 if (user) {
-                   
-                    document.cookie = "token=" + user.token;
-                    this.dialog.closeAll();
-                    window.location.reload();
-
-
-                } else {
-                    this.snackBar.open("Usuario o contraseña incorrectos", "Cerrar", {
-                        duration: 3000,
-                    });
+                    if (user.username == "Usuario incorrecto") {
+                        this.snackBar.open(
+                            "Usuario o contraseña incorrectos",
+                            "Cerrar",
+                            {
+                                duration: 3000,
+                            }
+                        );
+                    } else {
+                        document.cookie = "token=" + user.token;
+                        this.dialog.closeAll();
+                        window.location.reload();
+                    }
                 }
             });
         }

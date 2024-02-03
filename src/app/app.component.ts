@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { HttpClient } from "@angular/common/http";
+import { Component, inject } from "@angular/core";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+    selector: "app-root",
+    templateUrl: "./app.component.html",
+    styleUrl: "./app.component.css",
 })
 export class AppComponent {
-  title = 'F1News';
+    http = inject(HttpClient);
+    title = "F1News";
 }

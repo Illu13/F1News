@@ -9,12 +9,14 @@ import { FooterComponent } from './componentes/footer/footer.component';
 import { AngularModulesModule } from './angular-modules/angular-modules.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoticiasComponent } from './componentes/noticias/noticias.component';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, provideHttpClient, withInterceptors } from "@angular/common/http";
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { RegisterModalComponent } from './componentes/register-modal/register-modal.component';
 import { LoginModalComponent } from './componentes/login-modal/login-modal.component';
 import { CookieServiceService } from './services/cookie-service.service';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { InsertarNoticiasComponent } from './componentes/insertar-noticias/insertar-noticias.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { CookieServiceService } from './services/cookie-service.service';
     NoticiasComponent,
     RegisterModalComponent,
     LoginModalComponent,
+    InsertarNoticiasComponent,
 
 
   ],
@@ -39,6 +42,11 @@ import { CookieServiceService } from './services/cookie-service.service';
   ],
   providers: [
     provideClientHydration(),
+    [{
+        provide: HTTP_INTERCEPTORS,
+        useClass: AuthInterceptor,
+        multi: true
+    }]
     
   ],
   bootstrap: [AppComponent]
