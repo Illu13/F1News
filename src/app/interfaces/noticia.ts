@@ -1,8 +1,7 @@
 export interface Noticia {
     id: number;
     title: string;
-    subtitles: string;
+    subtitle: string;
     photo: string;
     noticetext: string;
-    iduser: number;
 }

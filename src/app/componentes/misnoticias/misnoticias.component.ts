@@ -16,6 +16,7 @@ export class MisnoticiasComponent {
     }
     ngOnInit() {
         this.connectService.getMisNoticias().subscribe((noticias: Noticia[]) => {
+            console.log(noticias);
             this.noticias = noticias;
         });
     }

@@ -1,0 +1,73 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+        <mat-card-header>
+            <mat-card-title>Editar noticia</mat-card-title>
+        </mat-card-header>
+        <form class="example-form">
+            <mat-card-content>
+                <mat-form-field class="example-full-width">
+                    <input
+                        matInput
+                        [(ngModel)]="titular"
+                        name="titular"
+                        placeholder="Titular"
+                        required
+                    />
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <input
+                        matInput
+                        [(ngModel)]="subtitular"
+                        name="subtitular"
+                        placeholder="Subtitular"
+                        required
+                    />
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input
+                        matInput
+                        [(ngModel)]="foto"
+                        name="foto"
+                        placeholder="Foto(link)"
+                        required
+                    />
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input
+                        matInput
+                        [(ngModel)]="contenidoNoticia"
+                        name="contenidoNoticia"
+                        placeholder="Contenido de la noticia"
+                        required
+                    />
+                </mat-form-field>
+                <mat-form-field class="example-full-width oculto">
+                    <input
+                        matInput
+                        [(ngModel)]="id"
+                        name="id"
+                        placeholder="Contenido de la noticia"
+                        required
+                    />
+                </mat-form-field>
+            </mat-card-content>
+            <button
+                mat-stroked-button
+                color="accent"
+                (click)="editarNoticia()"
+                class="btn-block"
+            >
+                Editar noticia
+            </button>
+            <button
+            mat-stroked-button
+            color="accent"
+            (click)="eliminarNoticia()"
+            class="btn-block"
+        >
+        Eliminar noticia
+        </button>
+        </form>
+    </mat-card>
+</div>

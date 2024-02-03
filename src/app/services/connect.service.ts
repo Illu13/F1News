@@ -1,7 +1,7 @@
+import { Noticia } from './../interfaces/noticia';
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable, catchError } from "rxjs";
-import { Noticia } from "../interfaces/noticia";
 import { User } from "../interfaces/user";
 import { loggedUser } from "../interfaces/loggedUser";
 import { of } from 'rxjs';
@@ -57,13 +57,31 @@ export class ConnectService {
         }
 
         const url = "http://localhost:8080/noticias/insertar";
-        console.log("hola");
         return this.http.post<Noticia>(url, noticiaJson);
+    }
+    public editar(noticia: Noticia): Observable<Noticia> {
+
+        let n =  {
+            id: noticia.id,
+            title: noticia.title,
+            subtitle: noticia.subtitle,
+            photo: noticia.photo,
+            noticetext: noticia.noticetext,
+
+        }
+
+        const url = "http://localhost:8080/noticias/editar";
+        return this.http.post<Noticia>(url, n);
     }
 
     public getMisNoticias(): Observable<Noticia[]> {
         const url = "http://localhost:8080/noticias/misnoticias";
         return this.http.post<Noticia[]>(url, null);
+    }
+    
+    public eliminarNoticia(noticia: Noticia): Observable<Noticia[]> {
+        const url = "http://localhost:8080/noticias/eliminar";
+        return this.http.post<Noticia[]>(url, noticia);
     }
 
 }

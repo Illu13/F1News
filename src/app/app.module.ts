@@ -19,6 +19,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { InsertarNoticiasComponent } from './componentes/insertar-noticias/insertar-noticias.component';
 import { CerrarSesionModalComponent } from './componentes/cerrar-sesion-modal/cerrar-sesion-modal.component';
 import { MisnoticiasComponent } from './componentes/misnoticias/misnoticias.component';
+import { EditarnoticiaComponent } from './componentes/editarnoticia/editarnoticia.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { MisnoticiasComponent } from './componentes/misnoticias/misnoticias.comp
     InsertarNoticiasComponent,
     CerrarSesionModalComponent,
     MisnoticiasComponent,
+    EditarnoticiaComponent,
 
 
   ],
