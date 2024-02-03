@@ -62,7 +62,7 @@ export class RegisterModalComponent {
                                 duration: 3000
                             });
                         } else {
-                            this.router.navigate(['/home']);
+                            this.router.navigate(['']);
                             this.snackBar.open("Cuenta registrada, inicia sesión.", 'Cerrar', {
                                 duration: 3000
                             });

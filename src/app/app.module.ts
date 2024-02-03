@@ -17,6 +17,7 @@ import { LoginModalComponent } from './componentes/login-modal/login-modal.compo
 import { CookieServiceService } from './services/cookie-service.service';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { InsertarNoticiasComponent } from './componentes/insertar-noticias/insertar-noticias.component';
+import { CerrarSesionModalComponent } from './componentes/cerrar-sesion-modal/cerrar-sesion-modal.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { InsertarNoticiasComponent } from './componentes/insertar-noticias/inser
     RegisterModalComponent,
     LoginModalComponent,
     InsertarNoticiasComponent,
+    CerrarSesionModalComponent,
 
 
   ],

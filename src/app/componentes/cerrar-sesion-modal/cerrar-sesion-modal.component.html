@@ -1,0 +1,25 @@
+<div class="wrapper">
+    <mat-card class="box">
+        <mat-card-header class="text">
+            <mat-card-title class="text">¿Quieres cerrar sesión?</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="modal-buttons">
+                <button
+                    class="modal-button"
+                    mat-button
+                    (click)="cerrarSesion()"
+                >
+                    Sí
+                </button>
+                <button
+                    class="modal-button"
+                    mat-button
+                    (click)="noCerrarSesion()"
+                >
+                    No
+                </button>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

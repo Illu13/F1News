@@ -1,4 +1,6 @@
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Component } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-insertar-noticias',
@@ -6,5 +8,31 @@ import { Component } from '@angular/core';
   styleUrl: './insertar-noticias.component.css'
 })
 export class InsertarNoticiasComponent {
+    form: FormGroup;
+    titular: string = "";
+    subtitular: string = "";
+    foto: string = "";
+    contenidoNoticia: string = "";
 
+    constructor(private snackbar: MatSnackBar) {
+
+        this.form = new FormGroup({
+          titular: new FormControl(''),
+          subtitular: new FormControl(''),
+          foto: new FormControl(''),
+          textoNoticia: new FormControl('')
+        });
+    }
+
+    subirNoticia() {
+        if (this.titular == "" || this.subtitular == "" || this.foto == "" || this.contenidoNoticia == "") {
+            this.snackbar.open(
+                "Tienes que rellenar todos los campos",
+                "Cerrar",
+                {
+                    duration: 3000,
+                }
+            );
+        }
+    }
 }

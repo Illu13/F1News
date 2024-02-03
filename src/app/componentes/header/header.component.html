@@ -10,7 +10,7 @@
     <span class="example-spacer"></span>
 
     <a mat-button [routerLink]="['/home']">Inicio</a>
-    <a mat-button routerLink="/productos">Crear noticia</a>
+    <a mat-button [routerLink]="['/insertNewNoticia']">Crear noticia</a>
     <a mat-button routerLink="/contacto">Editar noticia</a>
     <div *ngIf="token == ''; else logged" class="final">
         <a mat-button (click)="abrirModalRegister()" 
@@ -21,7 +21,7 @@
 
     <ng-template #logged>
         <div class="final">
-            <a mat-button (click)="cerrarSesion()" 
+            <a mat-button (click)="abrirModalCerrarSesion('500ms', '250ms')" 
             >Cerrar sesión</a
         >
         </div>

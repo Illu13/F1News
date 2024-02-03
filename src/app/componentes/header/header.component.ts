@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { RegisterModalComponent } from '../register-modal/register-modal.component';
 import { LoginModalComponent } from '../login-modal/login-modal.component';
 import { CookieServiceService } from '../../services/cookie-service.service';
+import { CerrarSesionModalComponent } from '../cerrar-sesion-modal/cerrar-sesion-modal.component';
 
 @Component({
   selector: 'app-header',
@@ -26,8 +27,11 @@ export class HeaderComponent {
         });
     }
 
-    cerrarSesion() {
-        this.cookies.deleteCookie('token');
-        window.location.reload();
-        }
+    abrirModalCerrarSesion(enterAnimationDuration:any, exitAnimationDuration:any): void {
+        const dialogRef = this.dialog.open(CerrarSesionModalComponent, {
+            width: '250px',
+            enterAnimationDuration,
+            exitAnimationDuration,
+        });
+    }
 }
