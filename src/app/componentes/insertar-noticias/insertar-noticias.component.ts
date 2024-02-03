@@ -1,6 +1,9 @@
+import { noticiaInsertar } from './../../interfaces/noticiaInsertar';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Component } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { ConnectService } from '../../services/connect.service';
+import { Noticia } from '../../interfaces/noticia';
 
 @Component({
   selector: 'app-insertar-noticias',
@@ -14,7 +17,7 @@ export class InsertarNoticiasComponent {
     foto: string = "";
     contenidoNoticia: string = "";
 
-    constructor(private snackbar: MatSnackBar) {
+    constructor(private snackbar: MatSnackBar, private connectService: ConnectService) {
 
         this.form = new FormGroup({
           titular: new FormControl(''),
@@ -33,6 +36,19 @@ export class InsertarNoticiasComponent {
                     duration: 3000,
                 }
             );
+        } else {
+            var noticia:noticiaInsertar;
+            noticia = {
+                title: this.titular,
+                subtitles: this.subtitular,
+                photo: this.foto,
+                noticetext: this.contenidoNoticia,
+
+            }
+            console.log(this.connectService.insertarNoticia(noticia).subscribe((noticia: Noticia) => {
+                console.log(noticia);
+    
+            }));
         }
     }
 }

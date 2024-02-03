@@ -1,7 +1,7 @@
 <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
     <mat-card class="box">
         <mat-card-header>
-            <mat-card-title>Register</mat-card-title>
+            <mat-card-title>Publicar noticia</mat-card-title>
         </mat-card-header>
         <form class="example-form">
             <mat-card-content>
@@ -9,8 +9,8 @@
                     <input
                         matInput
                         [(ngModel)]="titular"
-                        name="username"
-                        placeholder="Username"
+                        name="titular"
+                        placeholder="Titular"
                         required
                     />
                 </mat-form-field>
@@ -50,7 +50,7 @@
                 (click)="subirNoticia()"
                 class="btn-block"
             >
-                Iniciar sesión
+            Publicar noticia
             </button>
         </form>
     </mat-card>

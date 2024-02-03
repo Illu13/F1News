@@ -18,6 +18,7 @@ import { CookieServiceService } from './services/cookie-service.service';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { InsertarNoticiasComponent } from './componentes/insertar-noticias/insertar-noticias.component';
 import { CerrarSesionModalComponent } from './componentes/cerrar-sesion-modal/cerrar-sesion-modal.component';
+import { MisnoticiasComponent } from './componentes/misnoticias/misnoticias.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { CerrarSesionModalComponent } from './componentes/cerrar-sesion-modal/ce
     LoginModalComponent,
     InsertarNoticiasComponent,
     CerrarSesionModalComponent,
+    MisnoticiasComponent,
 
 
   ],

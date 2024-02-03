@@ -6,6 +6,7 @@ import { User } from "../interfaces/user";
 import { loggedUser } from "../interfaces/loggedUser";
 import { of } from 'rxjs';
 import { loggin } from "../interfaces/loggin";
+import { noticiaInsertar } from "../interfaces/noticiaInsertar";
 @Injectable({
     providedIn: "root",
 })
@@ -24,9 +25,7 @@ export class ConnectService {
             username: usuario.username,
         };
         const url = "http://localhost:8080/user/insertar";
-        return this.http.post<User>(url, user, {
-            headers: { "Content-Type": "application/json" },
-        });
+        return this.http.post<User>(url, user);
     }
 
     public loginUsuario(loggin: loggin): Observable<loggedUser | null> {
@@ -37,9 +36,7 @@ export class ConnectService {
         const url = "http://localhost:8080/user/login";
 
         return this.http
-            .post<loggedUser>(url, user, {
-                headers: { "Content-Type": "application/json" },
-            })
+            .post<loggedUser>(url, user)
             .pipe(
                 catchError((error) => {
     
@@ -47,6 +44,26 @@ export class ConnectService {
                     return of(null);
                 })
             );
+    }
+
+    public insertarNoticia(noticia: noticiaInsertar): Observable<Noticia> {
+
+        let noticiaJson =  {
+            title: noticia.title,
+            subtitle: noticia.subtitles,
+            photo: noticia.photo,
+            noticetext: noticia.noticetext,
+
+        }
+
+        const url = "http://localhost:8080/noticias/insertar";
+        console.log("hola");
+        return this.http.post<Noticia>(url, noticiaJson);
+    }
+
+    public getMisNoticias(): Observable<Noticia[]> {
+        const url = "http://localhost:8080/noticias/misnoticias";
+        return this.http.post<Noticia[]>(url, null);
     }
 
 }
