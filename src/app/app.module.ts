@@ -20,6 +20,7 @@ import { InsertarNoticiasComponent } from './componentes/insertar-noticias/inser
 import { CerrarSesionModalComponent } from './componentes/cerrar-sesion-modal/cerrar-sesion-modal.component';
 import { MisnoticiasComponent } from './componentes/misnoticias/misnoticias.component';
 import { EditarnoticiaComponent } from './componentes/editarnoticia/editarnoticia.component';
+import { NoticiaComponent } from './componentes/noticia/noticia.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { EditarnoticiaComponent } from './componentes/editarnoticia/editarnotici
     CerrarSesionModalComponent,
     MisnoticiasComponent,
     EditarnoticiaComponent,
+    NoticiaComponent,
 
 
   ],

@@ -84,4 +84,9 @@ export class ConnectService {
         return this.http.post<Noticia[]>(url, noticia);
     }
 
+    public marcarNoticiaFav(noticia: Noticia): Observable<Noticia[]>{
+        const url = "http://localhost:8080/noticias/favorita";
+        return this.http.post<Noticia[]>(url, noticia);
+    }
+
 }

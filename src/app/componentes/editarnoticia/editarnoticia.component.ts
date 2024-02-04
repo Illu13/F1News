@@ -91,7 +91,6 @@ export class EditarnoticiaComponent {
         this.connectService.eliminarNoticia(noticia).subscribe((noticia: Noticia[]) => {
             
         });
-        window.location.reload();
     }
 
 }
