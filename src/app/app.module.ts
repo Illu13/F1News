@@ -21,6 +21,8 @@ import { CerrarSesionModalComponent } from './componentes/cerrar-sesion-modal/ce
 import { MisnoticiasComponent } from './componentes/misnoticias/misnoticias.component';
 import { EditarnoticiaComponent } from './componentes/editarnoticia/editarnoticia.component';
 import { NoticiaComponent } from './componentes/noticia/noticia.component';
+import { NoticiasFavoritasComponent } from './componentes/noticias-favoritas/noticias-favoritas.component';
+import { NoticiaFavoritaComponent } from './componentes/noticia-favorita/noticia-favorita.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { NoticiaComponent } from './componentes/noticia/noticia.component';
     MisnoticiasComponent,
     EditarnoticiaComponent,
     NoticiaComponent,
+    NoticiasFavoritasComponent,
+    NoticiaFavoritaComponent,
 
 
   ],

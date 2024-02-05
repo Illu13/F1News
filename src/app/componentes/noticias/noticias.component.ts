@@ -22,19 +22,5 @@ export class NoticiasComponent {
         });
     }
 
-    favorita() {
-        var noticia:Noticia;
-        noticia = {
-            id: this.noticias[0].id,
-            title: this.noticias[0].title,
-            subtitle: this.noticias[0].subtitle,
-            photo: this.noticias[0].photo,
-            noticetext: this.noticias[0].noticetext,
-        }
-        
-        this.connectService.marcarNoticiaFav(noticia).subscribe((noticia: Noticia[]) => {
-            console.log(noticia);
-        });
-    }
        
 }

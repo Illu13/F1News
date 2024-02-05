@@ -12,6 +12,8 @@
     <a mat-button [routerLink]="['/']">Inicio</a>
     <a mat-button [routerLink]="['/insertNewNoticia']">Crear noticia</a>
     <a mat-button [routerLink]="['/misnoticias']">Editar noticia</a>
+    <a mat-button [routerLink]="['/noticiasFavoritas']">Mis noticias favoritas</a>
+
     <div *ngIf="token == ''; else logged" class="final">
         <a mat-button (click)="abrirModalRegister()" 
             >Registrarse</a

@@ -84,9 +84,20 @@ export class ConnectService {
         return this.http.post<Noticia[]>(url, noticia);
     }
 
-    public marcarNoticiaFav(noticia: Noticia): Observable<Noticia[]>{
+    public marcarNoticiaFav(noticia: Noticia): Observable<boolean>{
         const url = "http://localhost:8080/noticias/favorita";
+        return this.http.post<boolean>(url, noticia);
+    }
+
+    public misNoticiasFavoritas(): Observable<Noticia[]>{
+        const url = "http://localhost:8080/noticias/misfavoritas";
+        return this.http.post<Noticia[]>(url, null);
+    }
+
+    public eliminarNoticiaFavorito(noticia: Noticia): Observable<Noticia[]>{
+        const url = "http://localhost:8080/noticias/quitarfav";
         return this.http.post<Noticia[]>(url, noticia);
+
     }
 
 }

@@ -14,16 +14,14 @@
         <p id="textoNoticia">{{ noticia.noticetext }}</p>
         <p class="oculto">{{ noticia.id }}</p>
     </mat-card-content>
-    <div *ngIf="token != '';">
         <mat-card-content>
             <button
                 mat-stroked-button
                 color="accent"
-                (click)="favorita()"
+                (click)="quitarFavorito()"
                 class="btn-block"
             >
-                Marcar como favorita
+            Quitar de favoritos
             </button>
         </mat-card-content>
-    </div>
 </mat-card>
