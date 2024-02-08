@@ -46,6 +46,33 @@ export class InsertarNoticiasComponent {
                     duration: 3000,
                 }
             );
+        } else if (this.titular.length > 45) {
+            this.snackbar.open(
+                "El titular no puede tener mas de 45 caracteres",
+                "Cerrar",
+                {
+                    duration: 3000,
+                }
+            );
+
+        } else if (this.subtitular.length > 80) {
+            this.snackbar.open(
+                "El subtitular no puede tener mas de 80 caracteres",
+                "Cerrar",
+                {
+                    duration: 3000,
+                }
+            );
+
+        } else if (this.contenidoNoticia.length > 250) {
+            this.snackbar.open(
+                "El contenido de la noticia no puede tener mas de 250 caracteres",
+                "Cerrar",
+                {
+                    duration: 3000,
+                }
+            );
+
         } else {
             var noticia: noticiaInsertar;
             noticia = {

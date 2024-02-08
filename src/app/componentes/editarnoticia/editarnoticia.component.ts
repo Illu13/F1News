@@ -46,6 +46,33 @@ export class EditarnoticiaComponent {
                     duration: 3000,
                 }
             );
+        } else if (this.titular.length > 45) {
+            this.snackbar.open(
+                "El titular no puede tener mas de 45 caracteres",
+                "Cerrar",
+                {
+                    duration: 3000,
+                }
+            );
+
+        } else if (this.subtitular.length > 80) {
+            this.snackbar.open(
+                "El subtitular no puede tener mas de 80 caracteres",
+                "Cerrar",
+                {
+                    duration: 3000,
+                }
+            );
+
+        } else if (this.contenidoNoticia.length > 250) {
+            this.snackbar.open(
+                "El contenido de la noticia no puede tener mas de 250 caracteres",
+                "Cerrar",
+                {
+                    duration: 3000,
+                }
+            );
+
         } else {
             var noticia:Noticia;
             noticia = {
@@ -54,12 +81,8 @@ export class EditarnoticiaComponent {
                 subtitle: this.subtitular,
                 photo: this.foto,
                 noticetext: this.contenidoNoticia,
-
             }
-            
             this.connectService.editar(noticia).subscribe((noticia: Noticia) => {
-                console.log(noticia);
-    
             });
             this.snackbar.open(
                 "Noticia editada correctamente.",
@@ -68,13 +91,7 @@ export class EditarnoticiaComponent {
                     duration: 3000,
                 }
             );
-
-            try {
-            window.location.reload();
-            } catch (error) {
-                
-            }
-            
+            this.route.navigate(['/']);
         }
     }
 
@@ -91,6 +108,13 @@ export class EditarnoticiaComponent {
         this.connectService.eliminarNoticia(noticia).subscribe((noticia: Noticia[]) => {
             
         });
+        this.snackbar.open(
+            "Noticia eliminada correctamente.",
+            "Cerrar",
+            {
+                duration: 3000,
+            }
+        );
+        this.route.navigate(['/']);
     }
-
 }

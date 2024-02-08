@@ -1,4 +1,3 @@
-import { CookieService } from 'ngx-cookie-service';
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -11,10 +10,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoticiasComponent } from './componentes/noticias/noticias.component';
 import { HttpClientModule, provideHttpClient, withInterceptors } from "@angular/common/http";
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { RegisterModalComponent } from './componentes/register-modal/register-modal.component';
 import { LoginModalComponent } from './componentes/login-modal/login-modal.component';
-import { CookieServiceService } from './services/cookie-service.service';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { InsertarNoticiasComponent } from './componentes/insertar-noticias/insertar-noticias.component';
 import { CerrarSesionModalComponent } from './componentes/cerrar-sesion-modal/cerrar-sesion-modal.component';

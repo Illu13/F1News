@@ -7,6 +7,15 @@
     margin-bottom: 50px;
   }
 
+  .centertext {
+    height: 50px;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
   .image-container {
     justify-content: center;
     align-items: center;

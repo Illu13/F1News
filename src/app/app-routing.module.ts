@@ -16,6 +16,7 @@ const routes: Routes = [
     {path: 'insertNewNoticia', component: InsertarNoticiasComponent, canActivate: [loginGuard], canDeactivate: [writingGuard]},
     { path: 'misnoticias', component: MisnoticiasComponent, canActivate: [loginGuard] },
     { path: 'noticiasFavoritas', component: NoticiasFavoritasComponent, canActivate: [loginGuard, favGuardian] },
+    { path:'refresh', redirectTo: 'misnoticias'}
 ];
 
 @NgModule({

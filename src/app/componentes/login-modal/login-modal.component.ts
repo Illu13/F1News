@@ -22,7 +22,6 @@ export class LoginModalComponent {
     constructor(
         private connectService: ConnectService,
         private router: Router,
-        private formBuilder: FormBuilder,
         private snackBar: MatSnackBar,
         public dialog: MatDialog
     ) {}
